@@ -4,12 +4,12 @@ import "firebase/firestore";
 import 'firebase/storage';  
 
 firebase.initializeApp( {
-    apiKey: "AIzaSyBWKDeWvep9DU5A2nrclkpllct6im49tOw",
-    authDomain: "insta-clone-bc62d.firebaseapp.com",
-    projectId: "insta-clone-bc62d",
-    storageBucket: "insta-clone-bc62d.appspot.com",
-    messagingSenderId: "61070280936",
-    appId: "1:61070280936:web:71aaa2000648465247215d"
+  apiKey: "AIzaSyClC9tcS485aUfaHfEERvC8Z4h-RqDjYvE",
+  authDomain: "flatbuddy-3379b.firebaseapp.com",
+  projectId: "flatbuddy-3379b",
+  storageBucket: "flatbuddy-3379b.appspot.com",
+  messagingSenderId: "237930991888",
+  appId: "1:237930991888:web:b780a60ee297d678a8d595"
   });
 
   const auth = firebase.auth();

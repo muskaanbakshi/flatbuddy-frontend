@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import insta_logo from '../../images/logoinsta.png'
 import { storage,auth } from '../firebase'
 class SignIn extends Component {
 
@@ -7,8 +6,8 @@ class SignIn extends Component {
         super()
         this.state={
             emailId:'',
-            password:''
-
+            password:'',
+            inValid: false
         }
     }
 
@@ -19,7 +18,6 @@ class SignIn extends Component {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-    console.log(user);
     localStorage.setItem("user",user);
     window.location.reload()
     // ...
@@ -27,6 +25,8 @@ class SignIn extends Component {
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    console.log(errorMessage);
+    this.setState({inValid: true});
   });
     }
     render() {
@@ -35,14 +35,20 @@ class SignIn extends Component {
             
           
            <div className='loginpage_signin'>
-            <input className='loginpage_text' onChange={(e)=>this.setState({emailId:e.target.value})} placeholder='Phone number,username or email' type='text'>
+            <input className='loginpage_text' onChange={(e)=>this.setState({emailId:e.target.value})} placeholder='Email address' type='email'>
 
             </input>
-            <input className='loginpage_text' onChange={(e)=>this.setState({password:e.target.value})} placeholder='password' type='password'>
+            <input className='loginpage_text' onChange={(e)=>this.setState({password:e.target.value})} placeholder='Enter password' type='password'>
 
             </input>
             <button style={{cursor:'pointer'}} onClick={this.login} className='login_button'>Log in </button>
             </div>
+
+            {this.inValid && 
+                <div> 
+                    Your email or password is incorrect
+                </div>
+            }
            
             </div>
            

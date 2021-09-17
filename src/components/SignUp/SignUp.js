@@ -69,7 +69,7 @@ class SignUp extends Component {
         return (
             <div>
                  <div className='loginpage_signin'>
-            <input  name= 'emailId' className='loginpage_text' onChange={(e)=>this.handleChange(e)} placeholder='Mobile number or email' type='text'>
+            <input  name= 'emailId' className='loginpage_text' onChange={(e)=>this.handleChange(e)} placeholder='Email address' type='email'>
 
             </input>
             <input  name='name' className='loginpage_text' onChange={(e)=>this.handleChange(e)} placeholder='Full Name' type='text'>
